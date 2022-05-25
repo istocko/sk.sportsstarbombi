@@ -8,22 +8,71 @@
 <title>SPORTSSTARSBOMBI</title>
 </head>
 <body style="margin:0px;">
-<h1 style="display:none">DJ Dzimo is a well known private mixing service that provides professional quality sound. They offer DJ's, MC's and other entertainment services at an affordable price.DJ Dzimo can provide an affordable, private mixing service for you. We are a full-time DJ company based in Slovakia with over 20 years of experience at weddings and events.</h1>
+<h1 style="display:none">SportsStarsBombi is a well known private ilifestyle service that provides professional quality iLife. We are a full-time lifestyle company based in Slovakia with over 20 years of experience at weddings and events.</h1>
 <div style="width:100%;height:100%;background-color: #ffffff;position:fixed;">
 <div style="width:100%px;height:100%;margin:0px auto;">
-<div id="welcome" style="height:100%;width:100%;background-image:url('logo-2.png');text-align:center;background-repeat: no-repeat; background-position: center 50px;" onClick="enter();">
+<div id="welcome" style="height:100%;width:100%;background-image:url('logo-2.png');text-align:center;background-repeat: no-repeat; background-position: center 50px;position:relative:top:100px;" onClick="/*enter();*/">
 
-<audio preload="auto" controls autoplay>
-  <source src="PROJECT DZIMO DJ - HOT mix 2022 DISCO SLOVAKIA.mp3" type="audio/mpeg">
+<!--<audio id="musicplayer" preload="auto" controls autoplay>
+  <source id="musicsource" src="" type="audio/mpeg">
 Your browser does not support the audio element.
-</audio>
-<br />
+</audio>-->
+
+
+		<script>
+			var playlist = {};
+			playlist[0] = "music/02. DJ. Dzimo Winter mix HOME 2020.mp3"
+			playlist[1] = "music/03. DJ. Dzimo CHRISTMAS Reverse version 2021.mp3"
+			playlist[2] = "music/04. DJ. Dzimo - THUESDAY KORONiA.mp3"
+			playlist[3] = "music/05. DJ. Dzimo - Dance mix dancefloor people.mp3"
+			playlist[4] = "music/06. DJ. Dzimo - Megamix SING Hallelujah 2020.mp3"
+			playlist[5] = "music/07. DJ. Dzimo - OK Everybody 2020.mp3"
+			
+			console.log("Playlist count: "+playlist.length);
+
+			function generateRandom(maxLimit = 100){
+				let rand = Math. random() * maxLimit;
+				console. log(rand); // say 99.81321410836433.
+				rand = Math. floor(rand); // 99.
+				return rand;
+			}
+			var index = generateRandom(6);
+			console.log(playlist[index]);
+			//document.getElementById("musicsource").src=playlist[index];
+		//	document.getElementById("musicplayer").play();
+			var audio = undefined;
+			function playRandomMusic()
+			{
+			document.getElementById('mixPlaying').innerHTML = "Prehravam mix z "+'https://sportsstarsbombi.sk/'+playlist[index];
+			audio = new Audio('https://sportsstarsbombi.sk/'+playlist[index]);
+			//audio.load();
+			const promise = audio.play();
+							if (promise !== undefined)
+							{
+								  promise
+    .then(() => {
+      // Audio is playing.
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+							}
+			}
+
+		</script>
+
+	<input style="background-color: green;color:white;border:2px red solid;height:50px;font-size:16px;font-weight:bold;" type="button" onclick="playRandomMusic();" value="Prehraj hudbu" />
+	<div id="mixPlaying"></div>
+	
+
 <a href="https://www.dzimo.sk/?from=pedro" title="Dj Dzimo SK" target="_NEW">Mix pre vas od &copy;Dj Dzimo SK 2022</a>
 </div>
-<audio controls>
+<br />
+<!--<audio controls>
   <source src="PROJECT DZIMO DJ - HOT mix 2022 DISCO SLOVAKIA.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
-</audio>
+</audio>-->
 <div id="main" style="height:100%;width:100%;display:none">
 	<div id="header" style="width:100%;height:25px;">
 		<a href="https://www.dzimo.sk"><img src="dzimo_logo.png" height="25px" /></a>
